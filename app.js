@@ -7,6 +7,9 @@ app.use(express.json());
 app.get('/api/items', (req, res) => {
     res.json({ message: "List of items" });
 });
+app.get('/api/items2', (req, res) => {
+    res.json({ message: "List of items to check in local" });
+});
 app.post('/api/items', (req, res) => {
     const newItem = req.body;
     res.status(201).json({ message: "Item added", data: newItem });
