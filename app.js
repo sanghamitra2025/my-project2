@@ -10,6 +10,10 @@ app.get('/api/items', (req, res) => {
 app.get('/api/items2', (req, res) => {
     res.json({ message: "List of items to check in local" });
 });
+
+app.get('/api/items3', (req, res) => {
+    res.json({ message: "List of items to check in local 2nd check" });
+});
 app.post('/api/items', (req, res) => {
     const newItem = req.body;
     res.status(201).json({ message: "Item added", data: newItem });
