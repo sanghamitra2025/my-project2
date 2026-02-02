@@ -1,0 +1,16 @@
+const express = require('express');
+const app = express();
+
+// Middleware to parse JSON request bodies
+app.use(express.json()); 
+
+app.get('/api/items', (req, res) => {
+    res.json({ message: "List of items" });
+});
+app.post('/api/items', (req, res) => {
+    const newItem = req.body;
+    res.status(201).json({ message: "Item added", data: newItem });
+});
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
